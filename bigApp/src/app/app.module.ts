@@ -11,6 +11,7 @@ import { ListViewComponent } from './components/list-view/list-view.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
 import { NewOrderComponent } from './components/new-order/new-order.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewOrderComponent } from './components/new-order/new-order.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
