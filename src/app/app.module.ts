@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AngularFireModule} from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +12,8 @@ import { MapViewComponent } from './components/map-view/map-view.component';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
 import { NewOrderComponent } from './components/new-order/new-order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     NgbModule
   ],
   providers: [],
