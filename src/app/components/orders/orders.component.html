@@ -1,2 +1,35 @@
+<h3>Orders <span class="glyphicon glyphicon-lock"></span></h3>
 
-<h3 >Orders <span class="glyphicon glyphicon-lock"></span></h3>
+  <h4 class="items">Items</h4>
+  <form action="action_page">
+    <label for="food">Food:</label>
+
+    <div class="orders-container">
+      <div class="order-item" *ngFor="let order of orders; let i = index" [ngClass]="{'selected-order': order.selected}"
+        (click)="selectOrder(i)">
+        <label>{{ order.name }}</label>
+      </div>
+    </div>
+
+    <label for="Drinks">Drinks:</label>
+
+    <br>
+    <div class="orders-container">
+      <div class="order-item" *ngFor="let drink of drinks; let i = index"
+        [ngClass]="{'selected-drink': drink.selected}" (click)="selectedDrink(i)">
+        <label>{{ drink.name }}</label>
+      </div>
+      <button class="btn btn-success submit">Submit</button>
+    </div>
+  </form>
+
+  <div class="orders">
+    <div class="order-item" *ngFor="let order of selectedOrders; let i = index">
+      <label>{{ order.name }}</label>
+    </div>
+
+    <div class="order-item" *ngFor="let drink of selectedDrinks; let i = index">
+      <label>{{ drink.name }}</label>
+    </div>
+  </div>
+
