@@ -1,13 +1,19 @@
-<p>about works!</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <button class="btn btn-success">chi</button>
 
-</body>
-</html>
+<header>
+  <div class="container">
+    <a>Customers Manager</a>
+  <nav >
+    <ul>
+      <li> <a href="#"routerLink="/customer">Customers</a> </li>
+      <li> <a href="#"routerLink="/orders">Orders</a>  </li>
+      <li> <a href="#"routerLink="/about">About</a>  </li>
+      <li> <button class="btn btn-dark logoutbtn">logout</button> </li>
+    </ul>
+  </nav>
+  </div>
+
+</header>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
