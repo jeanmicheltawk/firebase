@@ -29,7 +29,8 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    DashboardModule
+    DashboardModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
