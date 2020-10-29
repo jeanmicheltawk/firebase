@@ -22,14 +22,9 @@
     "@angular/platform-browser-dynamic": "~10.1.5",
     "@angular/router": "~10.1.5",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
-<<<<<<< HEAD
     "angularfire2": "^5.4.2",
-    "bootstrap": "^4.5.0",
-    "firebase": "^8.0.0",
-=======
     "bootstrap": "^4.5.3",
     "firebase": "^7.13.0",
->>>>>>> origin/jeanmichel
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
