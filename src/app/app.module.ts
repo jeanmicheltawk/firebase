@@ -14,12 +14,16 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardModule } from './components/dashboard/dashboard.module';
+import { ViewCustomerComponent } from './components/customers/view-customer/view-customer.component';
+import { MapViewComponent } from './components/customers/map-view/map-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ViewCustomerComponent,
+    MapViewComponent,
   ],
   imports: [
     HttpClientModule,
