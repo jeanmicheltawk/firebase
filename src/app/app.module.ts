@@ -17,6 +17,11 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
 import { ViewCustomerComponent } from './components/customers/view-customer/view-customer.component';
 import { MapViewComponent } from './components/customers/map-view/map-view.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +40,13 @@ import { MapViewComponent } from './components/customers/map-view/map-view.compo
     ReactiveFormsModule,
     DashboardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+<<<<<<< HEAD
+=======
+    AngularFireAuthModule,
+    AngularFirestoreModule
+>>>>>>> origin/jeanmichel
   ],
-  providers: [],
+  providers: [RegisterComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

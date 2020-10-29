@@ -27,8 +27,18 @@ const routes: Routes = [
           path: 'customers',
           component: CustomersComponent
           },
-      ]
-  }
+
+          {
+            path: '',
+            redirectTo: '/dashboard/about',
+            pathMatch: 'full'
+          }, ]
+  },
+  {
+    path: '',
+    redirectTo: '/dashboard/about',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
