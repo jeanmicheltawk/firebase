@@ -1,24 +1,24 @@
-
+<form class="main">
 <h2>Login Form</h2>
-
-<form action="/action_page.php" method="post" class="login">
+<form [formGroup]="LoginForm" (ngSubmit)="login()" class="login"></form>
   <div class="imgcontainer">
     <img src="../../../assets/images/avatar.png" alt="Avatar" class="avatar">
   </div>
-
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
+    <label for="uname"><b>E-mail</b></label>
+    <input type="text" placeholder="Enter E-mail" formControlName="email">
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
+    <input type="password" placeholder="Enter Password" formControlName="password">
     <button type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
+
+  <div>
+    <p class=“dont-have-account”>dont have an account ? <a class="register-button" (click)="gotoRegisterPage()">Register</a></p>
   </div>
 </form>
+
+
