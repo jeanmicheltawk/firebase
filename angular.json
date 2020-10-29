@@ -29,12 +29,8 @@
             ],
             "styles": [
               "src/styles.scss"
-
             ],
-            "scripts": [
-
-
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -98,9 +94,10 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         },
         "lint": {
@@ -129,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bigApp"
+    }
+  },
+  "defaultProject": "bigApp",
+  "cli": {
+    "analytics": "402f2c4f-d743-47ae-b170-baf52adb87dc"
+  }
 }
