@@ -20,6 +20,9 @@ body {
 header {
     background: $primary;
     padding: 1em 0;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 
     a {
         color: white;
@@ -40,9 +43,7 @@ header {
             li a {
                 padding: 1em;
 
-                &:hover {
-                    background: darken($primary, 10%);
-                }
+
             }
         }
     }

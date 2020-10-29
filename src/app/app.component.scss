@@ -5,9 +5,11 @@
 }
 .header{
   margin-left: 700px;
-  padding-top: 8px;
+  padding-top: 10%;
+  position: fixed;
+  z-index: 1;
 }
 
-.logoutbtn{
- margin-top: -6px;
-}
+
+
+

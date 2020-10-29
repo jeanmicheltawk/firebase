@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './components/dashboard/dashboard.module';
+import { ViewCustomerComponent } from './components/customers/view-customer/view-customer.component';
+import { MapViewComponent } from './components/customers/map-view/map-view.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -20,6 +22,8 @@ import { environment } from 'src/environments/environment';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ViewCustomerComponent,
+    MapViewComponent,
   ],
   imports: [
     HttpClientModule,
