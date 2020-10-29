@@ -9,12 +9,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './components/dashboard/dashboard.module';
+import { ViewCustomerComponent } from './components/customers/view-customer/view-customer.component';
+import { MapViewComponent } from './components/customers/map-view/map-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ViewCustomerComponent,
+    MapViewComponent,
   ],
   imports: [
     HttpClientModule,

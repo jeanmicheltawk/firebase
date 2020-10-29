@@ -73,3 +73,26 @@ html {
 }
 
 
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+  animation-name: jm;
+  animation-duration: 5s;
+}
+
+@keyframes jm{
+  0%{ color: black;}
+  10%{ color: firebrick;}
+  20%{ color: darkcyan;}
+  30%{ color: goldenrod;}
+  40%{ color: sandybrown;}
+  60%{ color: teal;}
+  80%{ color: white;}
+  90%{ color: gray;}
+  100%{ color: rgb(141, 28, 28);}
+
+}
