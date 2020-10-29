@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-customers',
@@ -10,13 +13,12 @@ export class CustomersComponent implements OnInit {
   elements = document.getElementsByClassName('column');
   // Declare a loop variable
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // List View
-   listView(): void {
+  listView(): void {
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < Element.length; i++) {
       Element[i].style.width = '100%';
@@ -24,13 +26,10 @@ export class CustomersComponent implements OnInit {
   }
 
   // Grid View
-   gridView(): void {
+  gridView(): void {
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < Element.length; i++) {
       Element[i].style.width = '50%';
     }
-    }
   }
-
-
-
+}
