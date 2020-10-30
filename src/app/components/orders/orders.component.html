@@ -1,28 +1,37 @@
+<h3>Orders <span class="glyphicon glyphicon-lock"></span></h3>
 
-<h3 >Orders <span class="glyphicon glyphicon-lock"></span></h3>
-<body ng-app ng-controller="OrderFormController">
+<h4 class="items">Items</h4>
+<div class="row action_page"></div>
 
-  <form>
+  <div class="col-6 ">
+    <label for="food">Food:</label>
 
-    <h1>Services</h1>
+    <div class="orders-container">
+      <div class="order-item" *ngFor="let order of orders; let i = index" [ngClass]="{'selected-order': order.selected}"
+        (click)="selectOrder(i)">
+        <label>{{ order.name }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 ">
+    <label for="Drinks">Drinks:</label>
+    <br>
 
-    <ul>
-      <!-- Loop through the services array, assign a click handler, and set or
-        remove the "active" css class if needed -->
-      <li ng-repeat="service in services" ng-click="toggleActive(service)" ng-class="{active:service.active}">
-        <!-- Notice the use of the currency filter, it will format the price -->
-        {{service.name}} <span>{{service.price | currency}}</span>
-      </li>
-    </ul>
-
-    <div class="total">
-      <!-- Calculate the total price of all chosen services. Format it as currency. -->
-      Total: <span>{{total() | currency}}</span>
+    <div class="orders-container">
+      <div class="order-item" *ngFor="let drink of drinks; let i = index" [ngClass]="{'selected-drink': drink.selected}"
+        (click)="selectedDrink(i)">
+        <label>{{ drink.name }}</label>
+      </div>
+      <button class="btn btn-success submit">Submit</button>
     </div>
 
-  </form>
+    <div class="orders">
+      <div class="order-item" *ngFor="let order of selectedOrders; let i = index">
+        <label>{{ order.name }}</label>
+      </div>
 
-  <!-- Include AngularJS from Google's CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  <script src="script.js"></script>
-</body>
+      <div class="order-item" *ngFor="let drink of selectedDrinks; let i = index">
+        <label>{{ drink.name }}</label>
+      </div>
+    </div>
+  </div>
