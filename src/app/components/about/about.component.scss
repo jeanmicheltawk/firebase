@@ -26,6 +26,7 @@ html {
 .card:hover {
   transform: scale(1.5);
   transition: all;
+  z-index: 1;
 }
 
 .about-section {

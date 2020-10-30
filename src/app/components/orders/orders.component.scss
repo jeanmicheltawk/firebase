@@ -5,8 +5,10 @@
 }
 .submit{
   text-align: center;
- margin-top: 15%;
-
+ width: 300px;
+ position: fixed;
+margin-top: 33%;
+margin-left: 51.2%;
 }
 .orders{
   border-radius: 12px;
@@ -14,6 +16,8 @@
   display: inline-block;
   width: 300px;
   height: 400px;
+  margin-top: 5.5%;
+
 }
 .items{
   margin-left: 670px;

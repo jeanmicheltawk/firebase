@@ -22,10 +22,11 @@
         (click)="selectedDrink(i)">
         <label>{{ drink.name }}</label>
       </div>
-      <button class="btn btn-success submit">Submit</button>
+
     </div>
   </div>
   <div class="col-6">
+
     <div class="orders">
       <div class="order-item" *ngFor="let order of selectedOrders; let i = index">
         <label>{{ order.name }}</label>
@@ -34,6 +35,9 @@
       <div class="order-item" *ngFor="let drink of selectedDrinks; let i = index">
         <label>{{ drink.name }}</label>
       </div>
+
     </div>
+
   </div>
+  <button class="btn btn-success submit" (click)="submitOrder()" >Submit</button>
 </div>

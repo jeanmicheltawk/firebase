@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orders',
@@ -42,4 +43,19 @@ export class OrdersComponent implements OnInit {
     this.selectedDrinks = this.drinks.filter(el => el.selected);
   }
 
+  submitOrder(index: number){
+    let output = '';
+    (this.selectedOrders = this.orders.filter(el => el.selected)).forEach((el) => {
+      output += el.name + ' ' + ' <br>';
+    });
+    (this.selectedDrinks = this.drinks.filter(el => el.selected)).forEach((el) => {
+      output += el.name + ' ' + ' <br>';
+    });
+    Swal.fire('Order Complete !!', output );
+    (this.selectedOrders = this.orders.filter(el => el.selected)).forEach((el) => {
+      el.selected = false;
+    });
+    this.selectedDrinks = this.drinks.filter(el => el.selected = false);
+    this.selectedOrders = this.orders.filter(el => el.selected = false);
+  }
 }
