@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
-  selector: 'app-customers',
-  templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  selector: 'app-add-new-customer',
+  templateUrl: './add-new-customer.component.html',
+  styleUrls: ['./add-new-customer.component.scss']
 })
-  export class CustomersComponent implements OnInit {
+export class AddNewCustomerComponent implements OnInit {
 
   students: any;
   studentFirstName: string;

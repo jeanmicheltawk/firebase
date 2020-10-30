@@ -16,7 +16,6 @@
     <br>
     <label for="Drinks">Drinks:</label>
 
-
     <div class="orders-container">
       <div class="order-item" *ngFor="let drink of drinks; let i = index" [ngClass]="{'selected-drink': drink.selected}"
         (click)="selectedDrink(i)">

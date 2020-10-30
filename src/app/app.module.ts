@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { AddNewCustomerComponent } from './components/customers/add-new-customer/add-new-customer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { environment } from 'src/environments/environment';
     RegisterComponent,
     ViewCustomerComponent,
     MapViewComponent,
+    AddNewCustomerComponent,
   ],
   imports: [
     HttpClientModule,

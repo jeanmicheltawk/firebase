@@ -43,7 +43,8 @@ export class OrdersComponent implements OnInit {
     this.selectedDrinks = this.drinks.filter(el => el.selected);
   }
 
-  submitOrder(index: number){
+  // tslint:disable-next-line: typedef
+  submitOrder(){
     let output = '';
     (this.selectedOrders = this.orders.filter(el => el.selected)).forEach((el) => {
       output += el.name + ' ' + ' <br>';
