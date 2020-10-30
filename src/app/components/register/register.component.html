@@ -1,31 +1,54 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="../../../assets/images/img-01.png" alt="IMG">
+      </div>
 
-<form class="main2">
-  <h2>Register</h2>
-  <form [formGroup]="RegisterForm" (ngSubmit)="register()" class="register"></form>
+      <form class="login100-form validate-form" [formGroup]="RegisterForm" (ngSubmit)="register()">
+        <span class="login100-form-title">
+          Member Register
+        </span>
+
+        <div class="wrap-input100 validate-input" data-validate = "First Name in required">
+          <input class="input100" type="text" formControlName="firstName" placeholder="First Name">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Last Name is required">
+          <input class="input100" type="text" formControlName="lastName" placeholder="Last Name">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <input class="input100" type="text" formControlName="email" placeholder="Email">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+          <input class="input100" type="password" formControlName="password" placeholder="Password">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit">
+            Register
+          </button>
+        </div>
 
 
-  <div class="imgcontainer">
-    <img src="../../../assets/images/avatar.png" alt="Avatar" class="avatar">
+      </form>
+    </div>
   </div>
-
-  <div class="container">
-    <label for="fname"><b>First Name</b></label>
-    <input type="text" placeholder="Enter First Name" formControlName="firstname">
-
-    <label for="lname"><b>Last Name</b></label>
-    <input type="text" placeholder="Enter Lat Name" formControlName="lastname">
-
-    <label for="email"><b>E-mail</b></label>
-    <input type="text" placeholder="Enter E-mail"  formControlName="email">
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password"  formControlName="psw">
-
-    <a class="button" (click)="gotoDashboardPage()">Register</a>
-
-  </div>
-
-
-
-</form>
-
+</div>
