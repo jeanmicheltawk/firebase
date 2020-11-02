@@ -1,72 +1,78 @@
-<h2> <b> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor"
-  xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-</svg> Customers</b></h2>
-<div class="container">
-<div class="row">
-<div class="col-md-3">
-  <label>First Name</label>
-  <input type="text" class="form-control" [(ngModel)]="studentFirstName" placeholder="FirstName">
-</div><br>
-<div class="col-md-3" ng-app="option" ng-controller="country">
-  <label>Last Name</label>
-  <input type="text" class="form-control" [(ngModel)]="studentLastName" placeholder="LastName">
-</div><br>
-<div class="col-md-3">
-  <label>Country</label>
-  <input type="text" class="form-control" [(ngModel)]="studentCountry" placeholder="Country">
-  <br>
-</div>
-<div class="col-md-3">
-  <label>Address</label>
-  <input type="text" class="form-control" [(ngModel)]="studentAddress" placeholder="Address">
-</div><br>
-<div class="col-md-3">
-  <button type="button" (click)="CreateRecord()"
-    [disabled]="!studentFirstName || !studentLastName || !studentCountry || !studentAddress"
-    class="btn btn-primary">+
-    Create Customer</button>
-</div>
-</div>
-<div class="row">
-<div class="col-md-3">
-  <div class="card" style="width: 18rem;" *ngFor="let item of students">
-    <div class="card-body" *ngIf="!item.isEdit; else elseBlock">
-      <h5 class="card-title">First Name: {{item.FirstName}}</h5>
-      <h5 class="card-title">Last Name: {{item.LastName}}</h5>
-      <h5 class="card-title">Country: {{item.Country}}</h5>
-      <h5 class="card-title">Address: {{item.Address}}</h5>
-      <button class="card-link " (click)="EditRecord(item)">Edit</button>&nbsp;&nbsp;&nbsp;
-      <button class="card-link" (click)="RemoveRecord(item.id)">Delete</button>
+<form>
+  <button class="btnopen"  (click)="openDiv()">Add Customer</button>
+  <div *ngIf="isDivOpen">
+    <h2> <b> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </svg> Customers</b></h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <label>First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="studentFirstName" [ngModelOptions]="{standalone: true}" placeholder="FirstName">
+        </div><br>
+        <div class="col-md-3" ng-app="option" ng-controller="country">
+          <label>Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="studentLastName" [ngModelOptions]="{standalone: true}" placeholder="LastName">
+        </div><br>
+        <div class="col-md-3">
+          <label>Country</label>
+          <input type="text" class="form-control" [(ngModel)]="studentCountry" [ngModelOptions]="{standalone: true}" placeholder="Country">
+          <br>
+        </div>
+        <div class="col-md-3">
+          <label>Address</label>
+          <input type="text" class="form-control" [(ngModel)]="studentAddress" [ngModelOptions]="{standalone: true}" placeholder="Address">
+        </div><br>
+
+        <div class="col-md-3">
+          <button type="button" (click)="CreateRecord()"
+            class="btn btn-primary">+
+            Create Customer</button>
+        </div>
+      </div>
     </div>
-    <ng-template #elseBlock>
-      <div class="card-body">
-        <h5 class="card-title">Edit</h5>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-12">
-              <Label>FN</Label>
-              <input type="text" class="form-control" [(ngModel)]="item.EditFirstName" placeholder="Edit FirstName">
-            </div>
-            <div class="col-md-12">
-              <Label>LN</Label>
-              <input type="text" class="form-control" [(ngModel)]="item.EditLastName" placeholder="Edit LastName">
-            </div>
-            <div class="col-md-12">
-              <Label>COUNTRY</Label>
-              <input type="text" class="form-control" [(ngModel)]="item.EditCountry" placeholder="Edit Country">
-            </div>
-            <div class="col-md-12">
-              <Label>ADDRESS</Label>
-              <input type="text" class="form-control" [(ngModel)]="item.EditAddress" placeholder="Edit Address">
+  </div>
+</form>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card" style="width: 18rem;" *ngFor="let item of students">
+      <div class="card-body" *ngIf="!item.isEdit; else elseBlock">
+        <h5 class="card-title">First Name: {{item.FirstName}}</h5>
+        <h5 class="card-title">Last Name: {{item.LastName}}</h5>
+        <h5 class="card-title">Country: {{item.Country}}</h5>
+        <h5 class="card-title">Address: {{item.Address}}</h5>
+        <button class="card-link " (click)="EditRecord(item)">Edit</button>&nbsp;&nbsp;&nbsp;
+        <button class="card-link" (click)="RemoveRecord(item.id)">Delete</button>
+      </div>
+      <ng-template #elseBlock>
+        <div class="card-body">
+          <h5 class="card-title">Edit</h5>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <Label>FN</Label>
+                <input type="text" class="form-control" [(ngModel)]="item.EditFirstName" [ngModelOptions]="{standalone: true}" placeholder="Edit FirstName">
+              </div>
+              <div class="col-md-12">
+                <Label>LN</Label>
+                <input type="text" class="form-control" [(ngModel)]="item.EditLastName" [ngModelOptions]="{standalone: true}" placeholder="Edit LastName">
+              </div>
+              <div class="col-md-12">
+                <Label>COUNTRY</Label>
+                <input type="text" class="form-control" [(ngModel)]="item.EditCountry" [ngModelOptions]="{standalone: true}" placeholder="Edit Country">
+              </div>
+              <div class="col-md-12">
+                <Label>ADDRESS</Label>
+                <input type="text" class="form-control" [(ngModel)]="item.EditAddress" [ngModelOptions]="{standalone: true}" placeholder="Edit Address">
+              </div>
             </div>
           </div>
+          <button class="card-link" (click)="item.isEdit = false">Cancel</button>&nbsp;&nbsp;&nbsp;
+          <button class="card-link" (click)="UpdateRecord(item)">Update</button>
         </div>
-        <button class="card-link" (click)="item.isEdit = false">Cancel</button>&nbsp;&nbsp;&nbsp;
-        <button class="card-link" (click)="UpdateRecord(item)">Update</button>
-      </div>
-    </ng-template>
+      </ng-template>
+    </div>
   </div>
 </div>
-</div>
-</div>
+

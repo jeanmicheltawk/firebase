@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
       this.submitting = false;
       return;
     }
-  }
+      }
 
   gotoDashboardPage(): void {
     this.router.navigate(['dashboard']);

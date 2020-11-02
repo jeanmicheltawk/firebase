@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , NgZone} from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
@@ -7,15 +7,17 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./customers.component.scss']
 })
   export class CustomersComponent implements OnInit {
-
+      isDivOpen = false;
   students: any;
   studentFirstName: string;
   studentLastName: string;
   studentCountry: string;
   studentAddress: string;
   constructor(
-    private crudService: CrudService
+    private crudService: CrudService,
+    private zone: NgZone
     ) { }
+
   ngOnInit(): void {
     this.crudService.read_Students().subscribe(data => {
       this.students = data.map((e: any) => {
@@ -67,4 +69,10 @@ import { CrudService } from 'src/app/services/crud.service';
     this.crudService.update_Student(recordRow.id, record);
     recordRow.isEdit = false;
   }
+openDiv(): void{
+  this.zone.run(() => {
+    this.isDivOpen = !this.isDivOpen;
+  });
+}
+
 }
