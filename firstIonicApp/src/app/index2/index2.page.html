@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+    <ion-icon (click)="goToAddUser()" name="add-circle-outline" class="add"></ion-icon>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card-body" *ngIf="!item.isEdit; else elseBlock">
+    <h5 class="card-title">First Name: {{item.itemName}}</h5>
+    <h5 class="card-title">Last Name: {{item.itemPrice}}</h5>
+    <h5 class="card-title">Country: {{item.itemLocation}}</h5>
+    <h5 class="card-title">Address: {{item.itemQty}}</h5>
+    <button class="card-link " (click)="EditRecord(item)">Edit</button>&nbsp;&nbsp;&nbsp;
+    <button class="card-link" (click)="RemoveRecord(item.id)">Delete</button>
+  </div>
+</ion-content>
