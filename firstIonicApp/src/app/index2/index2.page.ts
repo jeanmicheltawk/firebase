@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CrudService } from '../crud.service';
 
 @Component({
   selector: 'app-index2',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Index2Page implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private crudService: CrudService,
+    private zone: NgZone
+    ) { }
 
   ngOnInit() {
   }
-
+  goToAddUser(){
+    this.router.navigateByUrl('/add-user');
+  }
 }
