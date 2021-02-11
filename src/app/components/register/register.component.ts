@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
+
   register(): void {
     this.submitting = true;
     const email = this.RegisterForm.value.email;
@@ -48,6 +49,7 @@ export class RegisterComponent implements OnInit {
       });
     } else {
       this.submitting = false;
+
       return;
     }
       }
